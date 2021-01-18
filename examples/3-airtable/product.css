@@ -1,0 +1,26 @@
+.result h1 {
+  margin-top: 3rem;
+}
+.link {
+  color: var(--clr-primary-5);
+}
+.product {
+  margin-top: 3rem;
+  display: grid;
+  gap: 2rem;
+}
+.product-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.price {
+  color: var(--clr-primary-5);
+}
+
+@media screen and (min-width: 992px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}

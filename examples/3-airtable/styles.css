@@ -1,0 +1,37 @@
+.result {
+  padding: 5rem 0;
+}
+
+.product {
+  display: block;
+  margin-bottom: 3rem;
+  color: var(--clr-grey-1);
+}
+.product img {
+  width: 100%;
+  display: block;
+  height: 300px;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.info {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  color: var(--clr-primary-5);
+}
+@media screen and (min-width: 776px) {
+  .result {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .result {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
