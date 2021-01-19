@@ -1,0 +1,76 @@
+.form {
+  margin-top: 2rem;
+  background: var(--clr-white);
+  max-width: 600px;
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius);
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+label {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--clr-grey-5);
+  font-size: 1.15rem;
+  letter-spacing: var(--spacing);
+}
+input {
+  width: 100%;
+  background: var(--clr-grey-10);
+  border-color: transparent;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 1.25rem;
+}
+textarea {
+  width: 100%;
+  background: var(--clr-grey-10);
+  border-color: transparent;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+.submit-btn {
+  width: 100%;
+  background: var(--clr-primary-5);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  border-radius: var(--radius);
+  border-color: transparent;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--clr-white);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.submit-btn:hover {
+  background: var(--clr-primary-3);
+}
+.alert {
+  color: var(--clr-red-dark);
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.success {
+  color: var(--clr-green-dark);
+  margin-bottom: 0;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sending {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: var(--clr-primary-5);
+  animation: spinner 0.6s linear infinite;
+}

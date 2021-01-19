@@ -19,7 +19,27 @@
     </nav>
     <!-- content -->
     <section class="section section-center content">
-      <h1>Send Email</h1>
+      <h1 class="title">Send a Message</h1>
+      <form class="form">
+        <div class="form-control">
+          <label for="name">Name</label>
+          <input type="text" class="name-input" id="name" />
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="email" class="email-input" id="email" />
+        </div>
+        <div class="form-control">
+          <label for="subject">Subject</label>
+          <input type="text" class="subject-input" id="subject" />
+        </div>
+        <div class="form-control">
+          <label for="message">Message</label>
+          <textarea id="message" class="message-input" rows="5"> </textarea>
+        </div>
+        <p class="alert">display alert here</p>
+        <button type="submit" class="submit-btn">Send</button>
+      </form>
     </section>
     <!-- js -->
     <script
