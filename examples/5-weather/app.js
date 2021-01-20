@@ -28,6 +28,7 @@ async function getWeatherData(city) {
     <p>max temp:  ${max}&#8457</p>
     <p>feels like :  ${feels_like}&#8457</p>
     </article>`
+    input.value = ''
   } catch (error) {
     alert.style.display = 'block'
     alert.textContent = `Can not find weather data for city : "${city}"`

@@ -32,7 +32,7 @@ exports.handler = async (event, context) => {
     html: `<p>${message}</p>`,
   }
   try {
-    await transporter.sendMail({ from: 'peter' })
+    await transporter.sendMail({ ...data })
     return {
       statusCode: 200,
       body: 'Success',
