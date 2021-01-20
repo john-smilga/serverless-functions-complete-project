@@ -183,6 +183,9 @@ Examples
 .title {
   margin-bottom: 2rem;
 }
+.examples h1 {
+  margin-bottom: 5rem;
+}
 .examples a {
   letter-spacing: var(--spacing);
   color: var(--clr-primary-5);
