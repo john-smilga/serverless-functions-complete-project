@@ -1,5 +1,5 @@
+const title = document.querySelector('.title h2')
 const result = document.querySelector('.result')
-
 const fetchData = async () => {
   try {
     const { data } = await axios.get('/api/4-survey')
@@ -35,6 +35,8 @@ result.addEventListener('click', async function (e) {
     const voteNode = result.querySelector(`.vote-${id}`)
     const votes = voteNode.dataset.votes
     const newVotes = await modifyData(id, votes)
+    title.textContent = 'Survey'
+
     if (newVotes) {
       voteNode.textContent = `${newVotes} votes`
       voteNode.dataset.votes = newVotes
@@ -43,6 +45,7 @@ result.addEventListener('click', async function (e) {
 })
 // if arrow move up
 async function modifyData(id, votes) {
+  title.textContent = 'Loading...'
   try {
     const { data } = await axios.put(`/api/4-survey`, { id, votes })
     const newVotes = data.fields.votes
