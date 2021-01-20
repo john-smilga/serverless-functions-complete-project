@@ -21,7 +21,7 @@ form.addEventListener('submit', async function (e) {
   const message = messageInput.value
 
   try {
-    await axios.post('/api/7-email', {
+    await axios.post('/api/7-z-email', {
       name,
       email,
       subject,

@@ -18,6 +18,7 @@
     "dotenv": "^8.2.0",
     "mailgun-js": "^0.22.0",
     "netlify": "^6.0.12",
+    "nodemailer": "^6.4.17",
     "stripe": "^8.131.1"
   }
 }
