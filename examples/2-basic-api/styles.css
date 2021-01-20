@@ -27,6 +27,9 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
   }
+  .product img {
+    height: 200px;
+  }
 }
 @media screen and (min-width: 992px) {
   .result {
