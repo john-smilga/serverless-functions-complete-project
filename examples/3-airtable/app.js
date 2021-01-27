@@ -13,7 +13,7 @@ const fetchProducts = async () => {
         alt="${name}"
       />
       <div class="info">
-        <h5>utopia sofa</h5>
+        <h5>${name}</h5>
         <h5 class="price">$${price}</h5>
       </div>
     </a>`
