@@ -60,7 +60,7 @@ exports.handler = async (event, context) => {
   }
   // Default Response
   return {
-    statusCode: 400,
+    statusCode: 405,
     body: 'Only GET and PUT Requests Allowed',
   }
 }
