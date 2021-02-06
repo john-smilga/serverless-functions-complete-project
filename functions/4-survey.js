@@ -1,12 +1,12 @@
 require('dotenv').config()
 const Airtable = require('airtable-node')
+
 const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
-  .base('appRpwOOjOyiPQHi9')
+  .base('appEhvrZvHzwUw9Oz')
   .table('survey')
 
-exports.handler = async (event, context) => {
+exports.handler = async (event, context, cb) => {
   const method = event.httpMethod
-  // Get Survey Results
   if (method === 'GET') {
     try {
       const { records } = await airtable.list()
@@ -26,7 +26,6 @@ exports.handler = async (event, context) => {
       }
     }
   }
-  // PUT RESPONSE
   if (method === 'PUT') {
     try {
       const { id, votes } = JSON.parse(event.body)
@@ -36,11 +35,9 @@ exports.handler = async (event, context) => {
           body: 'Please provide id and votes values',
         }
       }
-      const fields = {
-        votes: Number(votes) + 1,
-      }
+      const fields = { votes: Number(votes) + 1 }
       const item = await airtable.update(id, { fields })
-
+      console.log(item)
       if (item.error) {
         return {
           statusCode: 400,

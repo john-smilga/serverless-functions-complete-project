@@ -1,11 +1,15 @@
 require('dotenv').config()
 const axios = require('axios')
-const url = `https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=${process.env.OPEN_WEATHER_API_KEY}&q=`
-exports.handler = async (event, context) => {
-  if (event.httpMethod !== 'POST') {
+
+const url = `http://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_API_KEY}&units=imperial&q=`
+
+exports.handler = async (event, context, cb) => {
+  const method = event.httpMethod
+
+  if (method !== 'POST') {
     return {
-      statusCode: 400,
-      body: 'Please Provide The City Name in POST Request',
+      statusCode: 405,
+      body: 'Only POST Requests Allowed',
     }
   }
 

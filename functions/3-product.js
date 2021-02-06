@@ -1,10 +1,11 @@
 require('dotenv').config()
 const Airtable = require('airtable-node')
+
 const airtable = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY })
-  .base('appRpwOOjOyiPQHi9')
+  .base('appEhvrZvHzwUw9Oz')
   .table('products')
 
-exports.handler = async (event, context) => {
+exports.handler = async (event, context, cb) => {
   const { id } = event.queryStringParameters
   if (id) {
     try {
@@ -12,7 +13,7 @@ exports.handler = async (event, context) => {
       if (product.error) {
         return {
           statusCode: 404,
-          body: `No product with id : ${id}`,
+          body: `No product with id: ${id}`,
         }
       }
       return {
@@ -21,8 +22,8 @@ exports.handler = async (event, context) => {
       }
     } catch (error) {
       return {
-        statusCode: 404,
-        body: `No product with id : ${id}`,
+        statusCode: 500,
+        body: `Server Error`,
       }
     }
   }

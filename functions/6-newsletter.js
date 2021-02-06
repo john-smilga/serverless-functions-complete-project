@@ -1,7 +1,8 @@
 require('dotenv').config()
 const axios = require('axios')
 const url = 'https://api.buttondown.email/v1/subscribers'
-exports.handler = async (event, context) => {
+
+exports.handler = async (event, context, cb) => {
   const method = event.httpMethod
   if (method !== 'POST') {
     return {
@@ -13,17 +14,13 @@ exports.handler = async (event, context) => {
   if (!email) {
     return {
       statusCode: 400,
-      body: JSON.stringify(['Please provide email value']),
+      body: 'Please provide email value',
     }
   }
-
   try {
     const data = await axios.post(
       url,
-
-      {
-        email,
-      },
+      { email },
       {
         headers: {
           Authorization: `Token ${process.env.EMAIL_KEY}`,
